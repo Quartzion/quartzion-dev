@@ -14,7 +14,6 @@ const routes = require('./routes')
 const PORT = process.env.PORT || 3000;
 const VITE_PORT = process.env.VITE_PORT;
 const CORS_PROD = process.env.PROD_FRONTEND;
-const PROD_BACKEND = process.env.PROD_BACKEND;
 
 const app = express();
 app.set('trust proxy', 1);
@@ -34,7 +33,6 @@ testRedis();
 const allowedOrigins = [
   `http://localhost:${VITE_PORT}`,
   `${CORS_PROD}`,
-  `${PROD_BACKEND}`
 ];
 
 app.use(cors({
